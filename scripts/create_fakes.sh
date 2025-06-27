@@ -71,7 +71,7 @@ create_fake_show() {
 	local showName
 	local showOutDir
 
-	showName=$(basename $1)
+        showName=$(basename "$1")
 	showOutDir="${showBaseOutDir}/${showName}"
 
 	for season in "${showInputDir}"/*.txt; do
@@ -93,7 +93,7 @@ create_fake_show() {
 
 printf "Creating fake tv shows...       "
 for show in "${root}/library/tvshows_en/"*; do
-	create_fake_show $show
+        create_fake_show "$show"
 done
 printf "[Done]\n"
 
@@ -122,14 +122,14 @@ musicBaseOutDir="${outDir}/music"
 
 # $1: Music directory
 create_fake_music() {
-	local aristInputDir=${1}
-	local artistName
-	local artistOutDir
+        local artistInputDir=${1}
+        local artistName
+        local artistOutDir
 
-	artistName=$(basename $1)
+        artistName=$(basename "$1")
 	artistOutDir="${musicBaseOutDir}/${artistName}"
 
-	for album in "${aristInputDir}"/*.txt; do
+        for album in "${artistInputDir}"/*.txt; do
 		local albumFile
 		local albumDir # Name without file extension
 
@@ -148,7 +148,7 @@ create_fake_music() {
 
 printf "Creating fake music albums...   "
 for artist in "${root}/library/music/"*; do
-	create_fake_music $artist
+        create_fake_music "$artist"
 done
 
 printf "[Done]\n"
