@@ -512,7 +512,7 @@ If you package MediaElch, e.g. for some Linux distributions, these notes may be 
    1000 movie directories, the time improvements were:
    - 3.8s -> 1.3s (SSD)
    - 4.1s -> 1.4s (HDD)
- - Fix unuseful log warning `[KodiXml] NFO file could not be opened for reading` for TV shows that do not have a NFO file.   
+ - Fix useless log warning `[KodiXml] NFO file could not be opened for reading` for TV shows that do not have a NFO file.
  - MediaElch now uses Qt's logging categories (#1278)
 
 ### 2.8.6 - Coridian (2021-01-22)
@@ -1317,7 +1317,7 @@ See: https://mediaelch.github.io/mediaelch-doc/faq.html#where-are-mediaelchs-set
  - Choose between English GB and English US certifications for The Movie DB
  - Handling of movie set posters and fanarts (compatible with “Movie Set Artwork Automator”)
  - Media Status Columns added
- - TV Shows: ID Tag get’s no longer removed
+ - TV Shows: ID Tag gets no longer removed
  - Bugfix: Loading only fanarts was not possible
  - Bugfix: Studios autocompleter showed duplicates
  - Map Studios and Countries to custom values while scraping
@@ -1428,7 +1428,7 @@ See: https://mediaelch.github.io/mediaelch-doc/faq.html#where-are-mediaelchs-set
 ### 0.9.6 (2012-09-20)
 
  - Ignore files in directory “Extras” (thanks to KBagust)
- - Allow TV Show episodes to have . inbetween season and episode numbers (thanks to KBagust)
+ - Allow TV Show episodes to have . in between season and episode numbers (thanks to KBagust)
  - Added debug output
  - Bugfix: Toolbar hidden in Mac OS X with small resolutions
 
