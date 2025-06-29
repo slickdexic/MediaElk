@@ -97,18 +97,26 @@ The directories containing your music must contain subdirectories for each artis
               </property>
              </column>
              <column>
-              <property name="text">
-               <string>Sep. folders</string>
-              </property>
-              <property name="toolTip">
-               <string>Items are in separate folders</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Reload On Start</string>
-              </property>
-              <property name="toolTip">
+             <property name="text">
+              <string>Sep. folders</string>
+             </property>
+             <property name="toolTip">
+              <string>Items are in separate folders</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Fix date</string>
+             </property>
+             <property name="toolTip">
+              <string>Set file dates from folder</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Reload On Start</string>
+             </property>
+             <property name="toolTip">
                <string>Automatically reload contents on start</string>
               </property>
              </column>

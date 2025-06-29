@@ -2821,6 +2821,11 @@ The directories containing your music must contain subdirectories for each artis
     </message>
     <message>
         <location line="+5"/>
+        <source>Fix date</source>
+        <translation>Fix date</translation>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>Reload On Start</source>
         <translation>Reload On Start</translation>
     </message>

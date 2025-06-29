@@ -14,6 +14,7 @@ void DirectorySettings::loadSettings()
             mediaelch::MediaDirectory dir;
             dir.path.setPath(QDir::toNativeSeparators(m_settings->value("path").toString()));
             dir.separateFolders = m_settings->value("sepFolders", false).toBool();
+            dir.fixDate = m_settings->value("fixDate", false).toBool();
             dir.autoReload = m_settings->value("autoReload", false).toBool();
             dir.disabled = m_settings->value("disabled", false).toBool();
 
@@ -38,6 +39,7 @@ void DirectorySettings::saveSettings()
             m_settings->setArrayIndex(i);
             m_settings->setValue("path", directories.at(i).path.path());
             m_settings->setValue("sepFolders", directories.at(i).separateFolders);
+            m_settings->setValue("fixDate", directories.at(i).fixDate);
             m_settings->setValue("autoReload", directories.at(i).autoReload);
             m_settings->setValue("disabled", directories.at(i).disabled);
         }
