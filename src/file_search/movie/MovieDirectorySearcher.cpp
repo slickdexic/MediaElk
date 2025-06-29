@@ -10,6 +10,8 @@
 
 #include <QMutexLocker>
 #include <QtConcurrent>
+#include <QFile>
+#include <QFileInfo>
 #include <memory>
 
 namespace mediaelch {
@@ -392,6 +394,26 @@ void MovieDiskLoader::storeAndAddToDatabase()
         // See also: Use https://stackoverflow.com/a/47473949/1603627
         // We do this in just one thread.
         movie->setLabel(m_db->getLabel(movie->files()));
+
+        if (m_dir.fixDate) {
+            for (const mediaelch::FilePath& file : movie->files()) {
+                QFileInfo fi(file.toString());
+                QFileInfo dirInfo(fi.dir().absolutePath());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+                QDateTime created = dirInfo.birthTime();
+#else
+                QDateTime created = dirInfo.created();
+#endif
+                if (!created.isValid()) {
+                    created = dirInfo.lastModified();
+                }
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+                QFile::setFileTime(file.toString(), created, QFileDevice::FileBirthTime);
+#endif
+                QFile::setFileTime(file.toString(), created, QFileDevice::FileModificationTime);
+            }
+        }
+
         persistence.addMovie(movie, m_dir.path);
         m_store->addMovie(movie);
     }

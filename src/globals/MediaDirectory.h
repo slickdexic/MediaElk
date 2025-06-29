@@ -8,6 +8,7 @@ struct MediaDirectory
 {
     DirectoryPath path;
     bool separateFolders = false;
+    bool fixDate = false;
     bool autoReload = false;
     bool disabled = false;
 };
